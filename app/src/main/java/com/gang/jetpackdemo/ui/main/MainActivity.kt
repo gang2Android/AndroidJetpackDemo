@@ -26,8 +26,8 @@ class MainActivity : BaseActivity() {
             if (it.showData == null) {
                 Log.e("111", "data====null")
             } else {
-                Log.e("111", "data====" + it.showData.msg)
-                main_tv.text = it.showData.msg
+                Log.e("111", "data====" + it.showData.toString())
+                main_tv.text = it.showData.toString()
             }
         })
 

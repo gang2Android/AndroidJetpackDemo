@@ -1,11 +1,10 @@
 package com.gang.jetpackdemo.ui.main
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.gang.jetpackdemo.bean.ProBean
+import com.gang.jetpackdemo.bean.HomeBean
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -36,7 +35,7 @@ class MainViewModel(val response: MainRepository) : ViewModel() {
         }
     }
 
-    data class UIState(val showLoading: Boolean, val showData: ProBean?)
+    data class UIState(val showLoading: Boolean, val showData: HomeBean?)
 
     class MainViewModelFactory : ViewModelProvider.NewInstanceFactory() {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
