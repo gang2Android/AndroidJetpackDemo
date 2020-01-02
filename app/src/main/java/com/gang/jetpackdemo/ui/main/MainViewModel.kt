@@ -2,15 +2,12 @@ package com.gang.jetpackdemo.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import com.gang.jetpackdemo.base.BaseViewModel
 import com.gang.jetpackdemo.bean.HomeBean
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import java.lang.Exception
 
-class MainViewModel(val response: MainRepository) : ViewModel() {
+class MainViewModel : BaseViewModel() {
+
+    private val response: MainRepository = MainRepository()
 
     private val _uiState = MutableLiveData<UIState>()
     val uiState: LiveData<UIState>
@@ -25,21 +22,17 @@ class MainViewModel(val response: MainRepository) : ViewModel() {
             }
         }
 
-        GlobalScope.launch(Dispatchers.IO) {
-            try {
+        run(
+            task = {
                 val result = response.getHomeData()
                 _uiState.postValue(UIState(false, result))
-            } catch (ex: Exception) {
+            },
+            error = {
                 _uiState.value = UIState(false, null)
             }
-        }
+        )
+
     }
 
     data class UIState(val showLoading: Boolean, val showData: HomeBean?)
-
-    class MainViewModelFactory : ViewModelProvider.NewInstanceFactory() {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return MainViewModel(MainRepository()) as T
-        }
-    }
 }
