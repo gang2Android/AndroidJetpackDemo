@@ -1,4 +1,4 @@
-package com.gang.jetpackdemo.api
+package com.gang.jetpackdemo.base
 
 import com.gang.jetpackdemo.BuildConfig
 import com.google.gson.GsonBuilder
@@ -38,7 +38,6 @@ abstract class BaseRetrofitClient{
     fun <S> getService(serviceClass: Class<S>, baseUrl: String): S {
         return Retrofit.Builder()
             .client(client)
-//            .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
             .baseUrl(baseUrl)
