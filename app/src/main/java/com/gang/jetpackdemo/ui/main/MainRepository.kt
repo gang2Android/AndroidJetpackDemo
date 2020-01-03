@@ -1,7 +1,7 @@
 package com.gang.jetpackdemo.ui.main
 
 import com.gang.jetpackdemo.api.RetrofitClient
-import com.gang.jetpackdemo.base.BaseRepository
+import com.gang.lib_base.mvvm.BaseRepository
 import com.gang.jetpackdemo.bean.HomeBean
 
 class MainRepository : BaseRepository() {

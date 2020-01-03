@@ -1,6 +1,6 @@
-package com.gang.jetpackdemo.base
+package com.gang.lib_base.http
 
-import com.gang.jetpackdemo.BuildConfig
+import com.gang.lib_base.BuildConfig
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient

@@ -3,11 +3,10 @@ package com.gang.jetpackdemo.ui.main
 import android.util.Log
 import androidx.lifecycle.Observer
 import com.gang.jetpackdemo.R
-import com.gang.jetpackdemo.base.BaseActivity
+import com.gang.lib_base.mvvm.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<MainViewModel>(MainViewModel::class.java) {
-
     override fun getLayoutId(): Int = R.layout.activity_main
 
     override fun initView() {
@@ -31,6 +30,9 @@ class MainActivity : BaseActivity<MainViewModel>(MainViewModel::class.java) {
         }
 
         mViewModel?.getHomeData()
+    }
+
+    override fun initData() {
     }
 
 }

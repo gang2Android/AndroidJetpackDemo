@@ -2,7 +2,7 @@ package com.gang.jetpackdemo.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.gang.jetpackdemo.base.BaseViewModel
+import com.gang.lib_base.mvvm.BaseViewModel
 import com.gang.jetpackdemo.bean.HomeBean
 
 class MainViewModel : BaseViewModel() {

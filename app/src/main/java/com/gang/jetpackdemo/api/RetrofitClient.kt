@@ -1,6 +1,6 @@
 package com.gang.jetpackdemo.api
 
-import com.gang.jetpackdemo.base.BaseRetrofitClient
+import com.gang.lib_base.http.BaseRetrofitClient
 import okhttp3.OkHttpClient
 
 object RetrofitClient : BaseRetrofitClient() {

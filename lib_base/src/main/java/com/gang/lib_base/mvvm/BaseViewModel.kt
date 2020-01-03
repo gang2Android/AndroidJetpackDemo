@@ -1,4 +1,4 @@
-package com.gang.jetpackdemo.base
+package com.gang.lib_base.mvvm
 
 import android.util.Log
 import androidx.lifecycle.Lifecycle

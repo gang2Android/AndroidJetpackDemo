@@ -1,4 +1,4 @@
-package com.gang.jetpackdemo.base
+package com.gang.lib_base.mvvm
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -15,9 +15,9 @@ abstract class BaseActivity<VM : BaseViewModel>(viewModelClass: Class<VM>) : App
         mViewModel?.let {
             lifecycle.addObserver(it)
         }
-
         initView()
         initListener()
+        initData()
     }
 
     override fun onDestroy() {
@@ -27,9 +27,12 @@ abstract class BaseActivity<VM : BaseViewModel>(viewModelClass: Class<VM>) : App
         super.onDestroy()
     }
 
+    abstract fun getLayoutId(): Int
+
     abstract fun initView()
 
     abstract fun initListener()
 
-    abstract fun getLayoutId(): Int
+    abstract fun initData()
+
 }
